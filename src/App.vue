@@ -76,7 +76,7 @@ const stopSlideShow = function(){
     <div class="carousel-inner">     
 
       <div class="carousel-item " v-for="(carouselitem, index) in carouselItems" :key="index" :class="index == activeIndex?'active':''">           
-        <img height="500" :src="carouselitem.image" class="d-block w-100 img img-responsive" alt="...">
+        <img height="500" :src="carouselitem.image" class="d-block w-100 img img-responsive" :alt="carouselitem.title" >
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ carouselitem.title }}</h5>
           <p>{{ carouselitem.caption }}</p>
