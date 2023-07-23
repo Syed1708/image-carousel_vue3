@@ -9,12 +9,12 @@ const carouselItems = [
   {
     image: 'https://images.unsplash.com/photo-1682685797769-481b48222adf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=1024&q=60',
     title: 'First Title',
-    caption: 'Fisrt Description'
+    caption: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quis recusandae debitis aut aspernatur qui dolorum nemo aliquid adipisci voluptate eius illum, libero aperiam iure possimus numquam ipsa molestias perferendis.'
   },
   {
     image: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=1024&q=60',
     title: 'Second Title',
-    caption: 'Second description'
+    caption: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quis recusandae debitis aut aspernatur qui dolorum nemo aliquid adipisci voluptate eius illum, libero aperiam iure possimus numquam ipsa molestias perferendis.'
   },
   {
     image: 'https://images.unsplash.com/photo-1682685797661-9e0c87f59c60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=1024&q=60',
@@ -70,8 +70,11 @@ const stopSlideShow = function(){
 <div >  
 
   <div @mouseover="stopSlideShow" @mouseleave="startSlideShow" id="carouselExampleCaptions" class="carousel">    
-    
 
+    <li class="mr-2" v-for="(items, index) in carouselItems" :key="index" :class="index == activeIndex?'indicatorActive':'indicatorNotactive'" >
+      
+        {{ index+1 }}
+      </li>
     
     <div class="carousel-inner">     
 
@@ -106,6 +109,20 @@ const stopSlideShow = function(){
 
 <style scoped>
  
+.indicatorActive{
+  color: rgb(21, 228, 100);
 
+}
+
+.indicatorNotactive{
+  color: rgb(119, 119, 119);
+}
+
+.carousel-indicators li{
+  background-color: #250303;
+  display: inline-block;
+  height: auto;
+  width: 20px;
+}
 
 </style>
